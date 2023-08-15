@@ -1,6 +1,7 @@
 ﻿using BlogProjesi.DataAccess.Context;
 using BlogProjesi.DataAccess.Repositories.Abstract;
 using BlogProjesi.DataAccess.Repositories.Concrete;
+using BlogProjesi.DataAccess.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,8 @@ namespace BlogProjesi.DataAccess.Extensions
         {
             services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }
     }
