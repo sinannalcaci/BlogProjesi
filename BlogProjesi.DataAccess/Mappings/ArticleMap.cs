@@ -13,6 +13,7 @@ namespace BlogProjesi.DataAccess.Mappings
     {
         public void Configure(EntityTypeBuilder<Article> builder)
         {
+            //Data Seed'leme --- Manuel Test Datası
             builder.HasData(new Article
             {
                 Id = Guid.NewGuid(),
@@ -39,9 +40,7 @@ namespace BlogProjesi.DataAccess.Mappings
                 IsDeleted = false
             }
             
-            
-            
-            
+           
             
             );
 

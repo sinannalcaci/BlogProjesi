@@ -13,6 +13,7 @@ namespace BlogProjesi.DataAccess.Mappings
     {
         public void Configure(EntityTypeBuilder<Image> builder)
         {
+            //Data Seed'leme --- Manuel Test Datası
             builder.HasData(new Image
             {
 
